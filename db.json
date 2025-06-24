@@ -1,0 +1,54 @@
+{
+    "api" : [
+            {
+                "id":"communities",
+                "data" : [
+                    {
+                        "id":"123",
+                        "name":"Reddit",
+                        "logo":"Reddit"
+                    },
+                    {
+                        "id":"124",
+                        "name":"X",
+                        "logo":"TwitterX"
+                    },
+                    {
+                        "id":"125",
+                        "name":"Facebook",
+                        "logo":"Facebook"
+                    },
+                    {
+                        "id":"126",
+                        "name":"Instagram", 
+                        "logo":"Instagram"
+                    }
+                ]
+            },
+            {
+                "id":"chat",
+                "data" : [
+                    {
+                        "id":"123",
+                        "name":"John Wave",
+                        "picture":"Reddit"
+                    },
+                    {
+                        "id":"124",
+                        "name":"Chat X",
+                        "picture":"TwitterX"
+                    },
+                    {
+                        "id":"125",
+                        "name":"Chat Facebook",
+                        "picture":"Facebook"
+                    },
+                    {
+                        "id":"126",
+                        "name":"Chat Instagram", 
+                        "picture":"Instagram"
+                    }
+                ]
+            }    
+    ] 
+}

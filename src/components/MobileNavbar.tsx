@@ -14,7 +14,7 @@ const MobileNavbar = ({setShowAddPost} : {setShowAddPost: React.Dispatch<SetStat
     return (
         <nav className='w-vh height-[50px] border-[#3F7CAC] border-b'>
             <div className='w-full h-fit flex flex-row justify-center align-center'>
-                <Link className='w-[50px] h-[50px] fixed flex justify-center items-center align-center left-[10px] flex justify-center'
+                <Link className='w-[50px] h-[50px] mr-auto flex justify-center items-center align-center'
                     to="/"
                     >
                     <WaveIcon className="w-fit h-[30px] fill-[#3F7CAC] pointer-events-none"/>
@@ -45,9 +45,9 @@ const MobileNavbar = ({setShowAddPost} : {setShowAddPost: React.Dispatch<SetStat
                         />
                     </div> : null
                 }
-                <div className={`w-[40px] h-[40px] fixed right-[15px] top-0 flex justify-center items-center fira-sans-regular`}>
+                <div className={`w-[40px] h-[40px] ml-auto mr-[5px] my-auto flex justify-center items-center fira-sans-regular`}>
                     {!session ?
-                    <Link className='w-[50px] h-[50px] rounded-full mt-auto mb-auto flex justify-center items-center align-center mr-[10px]'
+                    <Link className='w-[50px] h-[50px] rounded-full mt-auto mb-auto flex justify-center items-center mr-[10px]'
                         to="/Login"
                         >
                         <AnonIcon className='w-fit h-[30px] select-none pointer-events-none rounded-full border-1 border-[#3F7CAC]'/>
@@ -56,14 +56,12 @@ const MobileNavbar = ({setShowAddPost} : {setShowAddPost: React.Dispatch<SetStat
                     queriedUserData ? 
                         <Link
                             to={`/Profile/${queriedUserData.user_name}`}
-                            className="flex flex-row w-fit items-center"
+                            className="flex flex-row w-fit items-center  flex justify-center items-center"
                         >
                             {(queriedUserData.profile_picture_url && queriedUserData.profile_picture_url !== "") ? 
-                                <div>
                                 <img src={queriedUserData.profile_picture_url} 
                                     className="w-[30px] h-[30px] border-1 rounded-full border-sky-300"
                                 />
-                                </div> 
                                 :
                                 <AnonIcon className="w-[30px] h-[30px] border-1 rounded-full border-sky-300"/>
                             } 

@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router';
 import CreatePostIcon from '../assets/CreatePost.svg?react';
 import WaveIcon from '../assets/Wave.svg?react';
 import HomeIcon from '../assets/Home.svg?react';
+import NewPostsIcon from '../assets/NewPosts.svg?react'
 import TrendingIcon from '../assets/Trending.svg?react';
 import CommunitiesIcon from '../assets/Find-Community.svg?react';
 import AnonIcon from '../assets/Anonymous.svg?react';
@@ -18,6 +19,11 @@ const MobileNavbar = ({setShowAddPost} : {setShowAddPost: React.Dispatch<SetStat
                     to="/"
                     >
                     <WaveIcon className="w-fit h-[30px] fill-[#3F7CAC] pointer-events-none"/>
+                </Link> 
+                <Link className='w-[50px] h-[50px] rounded-full mt-auto mb-auto flex justify-center items-center align-center mr-[10px] hover:bg-sky-200 transition duration-300'
+                    to="/"
+                    >
+                    <NewPostsIcon className='w-fit h-[30px] select-none pointer-events-none'/>
                 </Link> 
                 <Link className='w-[50px] h-[50px] rounded-full mt-auto mb-auto flex justify-center items-center align-center mr-[10px] hover:bg-sky-200 transition duration-300'
                     to="/Trending"

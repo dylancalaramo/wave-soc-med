@@ -19,7 +19,7 @@ const MobileNavbar = ({setShowAddPost} : {setShowAddPost: React.Dispatch<SetStat
                     <WaveLogoBtn />
                 </div>
                 <Link className='w-[50px] h-[50px] rounded-full mt-auto mb-auto flex justify-center items-center align-center mr-[10px] hover:bg-sky-200 transition duration-300'
-                    to="/New"
+                    to="/"
                     >
                     <NewPostsIcon className='w-fit h-[30px] select-none pointer-events-none'/>
                 </Link> 

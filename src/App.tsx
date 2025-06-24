@@ -6,7 +6,6 @@ import HomeWall from './components/HomeWall';
 import TrendingWall from './components/TrendingWall';
 import Communities from './pages/Communities';
 import Community from './pages/Community';
-import Chat from './pages/Chat';
 import NewPostsWall from './components/NewPostsWall';
 
 function App() {
@@ -15,7 +14,7 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<Home />}>
-          <Route index path="New" element={<NewPostsWall />}/>
+          <Route index element={<NewPostsWall />}/>
           <Route path="Home" element={<HomeWall />}/>
           <Route path="Trending" element={<TrendingWall />}/>
           <Route path="Communities/:communityName" element={<Community />}/>
@@ -24,7 +23,6 @@ function App() {
         <Route path="Login" element={<Login />}/>
         <Route path="Profile/" element={<Profile/>}/>
         <Route path="Profile/:profileName" element={<Profile/>}/>
-        <Route path="Chat" element={<Chat />}/>
       </Routes>
     </>
   )

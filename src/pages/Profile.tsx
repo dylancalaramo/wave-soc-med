@@ -87,6 +87,7 @@ const Profile = () => {
             setShowPosts(true);
             queryClient.invalidateQueries({queryKey: ["profile"]});
             queryClient.invalidateQueries({queryKey: ["userPosts"]});
+            queryClient.invalidateQueries({queryKey: ["userData", userProfileData?.id]})
             navigate("/Profile/"+changeUsernameInput, {replace:true});
         }
     })
@@ -183,7 +184,7 @@ const Profile = () => {
             <div className="h-fit h-full min-h-screen border-x-1 lg:w-[60%] md:w-[80%] sm:w-full max-sm:w-full
                             [border-image:linear-gradient(to_bottom,#217AFF,#4D94FF,#FFFFFF)_1]">
                 <div className="w-full h-[100px] flex flex-row items-center bg-linear-to-r from-blue-500 to-sky-500 px-10">
-                    <Link to="/New" className="w-fit h-full flex flex-row text-2xl items-center mr-auto">
+                    <Link to="/" className="w-fit h-full flex flex-row text-2xl items-center mr-auto">
                         <Logo className="fill-white w-[75px] h-fit mr-[10px]"/>
                         <h1 className="antialiased fira-sans-black text-white text-[40px]">Wave</h1>
                     </Link>

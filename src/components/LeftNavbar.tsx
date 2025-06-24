@@ -19,7 +19,7 @@ const LeftNavbar = () => {
         <nav className='w-full h-full'>
             <div className='w-full h-fit flex flex-col items-end gap-[20px] min-h-screen border-[#3F7CAC] border-r-1 pt-[20px]'>
                 <Link
-                    to="/New"
+                    to="/"
                     className="w-[200px] flex flex-row items-center h-fit rounded-md hover:bg-blue-200 transition duration-300 
                             pl-[10px] pr-auto py-[5px] mr-[20px]"
                 >
@@ -27,16 +27,13 @@ const LeftNavbar = () => {
                     <h1 className='antialiased fira-sans-black text-[#3F7CAC] text-2xl'>Wave</h1>
                 </Link> 
                 <Link
-                    to="/New"
+                    to="/"
                     className="w-[200px] flex flex-row items-center h-fit rounded-md hover:bg-blue-200 transition duration-300 
                             pl-[10px] pr-auto py-[5px] mr-[20px]"
                 >
                     <NewPostsIcon className="w-fit h-[30px] mr-[10px]"/>
                     <h1 className='fira-sans-regular text-lg'>New Posts</h1>
                 </Link>  
-                {/* <div className='w-[80%] max-w-[250px] h-fit pr-[25px] ml-auto mt-[20px]'>
-                    <LinkButton img="NewPosts" text="New Posts" link='/New'/>
-                </div> */}
                 { session && 
                     <Link
                         to="/Home"

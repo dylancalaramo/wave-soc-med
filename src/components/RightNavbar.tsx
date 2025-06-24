@@ -62,7 +62,7 @@ const RightNavbar = ({setShowAddPost}: {setShowAddPost: React.Dispatch<React.Set
             </div>
             <div className='w-[80%] min-w-[225px] max-w-[250px] h-fit pl-[25px] mr-auto mt-[20px] md:block lg:hidden'>
                 <Link
-                    to="/New"
+                    to="/"
                     className="w-[200px] flex flex-row items-center h-fit rounded-md hover:bg-blue-200 transition duration-300 
                             pl-[10px] pr-auto py-[5px] mr-[20px] mt-[10px]"
                 >
@@ -73,7 +73,7 @@ const RightNavbar = ({setShowAddPost}: {setShowAddPost: React.Dispatch<React.Set
             { session && 
                 <div className='w-[80%] min-w-[225px] max-w-[250px] h-fit pl-[25px] mr-auto mt-[20px] md:block lg:hidden'>
                     <Link
-                    to="/New"
+                    to="/Home"
                     className="w-[200px] flex flex-row items-center h-fit rounded-md hover:bg-blue-200 transition duration-300 
                             pl-[10px] pr-auto py-[5px] mr-[20px] mt-[10px]"
                 >

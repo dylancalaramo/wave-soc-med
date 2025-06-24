@@ -19,7 +19,7 @@ const Login = () => {
         const {data: listener} = supabase.auth.onAuthStateChange((__, session) => {
             if(session) {
                 setTimeout(() => {
-                    redirect("/New");
+                    redirect("/");
                 }, 1500)
             } 
         })

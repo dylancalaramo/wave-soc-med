@@ -146,11 +146,11 @@ const Post = (props: {data: PostData}) => {
                             />
                             :
                             <div id="video"
-                                className="select-none pointer-events-none">
+                                className="w-full h-fit select-none pointer-events-none aspect-video">
                                 <ReactPlayer 
                                     url={props.data.mediaURL}
                                     width='100%'
-                                    height='50%'
+                                    height='100%'
                                     controls={true}
                                     id="video"
                                 />

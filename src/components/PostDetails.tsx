@@ -28,7 +28,7 @@ const PostDetails = ({post}: {post: PostDetailType}) => {
     }, [communityData?.name, navigate, setPostData])
 
     return (
-        <div className="w-fit max-w-[1000px] min-w-[700px] h-fit p-[10px]
+        <div className="w-fit max-w-[1000px] sm:w-screen max-sm:w-screen h-fit p-[10px]
             flex flex-col items-center justify-center 
             antialiased fira-sans-regular
             bg-white border-[#3F7CAC] border-1
@@ -85,12 +85,16 @@ const PostDetails = ({post}: {post: PostDetailType}) => {
                             className="w-fit h-fit max-h-[300px] aspect-auto"
                         />
                         :
-                        <ReactPlayer 
-                            url={post?.postData.mediaURL}
-                            width='100%'
-                            height='100%'
-                            controls={true}
-                        />}
+                        <div id="video"
+                            className="w-full h-fit aspect-video">
+                            <ReactPlayer 
+                                url={post.postData.mediaURL}
+                                width='100%'
+                                height='100%'
+                                controls={true}
+                                id="video"
+                            />
+                        </div>}
                     </div> :
                     null
                 }

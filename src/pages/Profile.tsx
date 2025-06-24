@@ -185,14 +185,14 @@ const Profile = () => {
                             [border-image:linear-gradient(to_bottom,#217AFF,#4D94FF,#FFFFFF)_1]">
                 <div className="w-full h-[100px] flex flex-row items-center bg-linear-to-r from-blue-500 to-sky-500 px-10">
                     <Link to="/" className="w-fit h-full flex flex-row text-2xl items-center mr-auto">
-                        <Logo className="fill-white w-[75px] h-fit mr-[10px] sm:w-[50px] max-sm:w-[50px]"/>
-                        <h1 className="antialiased fira-sans-black text-white text-[40px] sm:hidden max-sm:hidden">Wave</h1>
+                        <Logo className="fill-white w-[50px] h-fit mr-[10px] md:w-[50px]"/>
+                        <h1 className="antialiased fira-sans-black text-white hidden text-[40px] md:block">Wave</h1>
                     </Link>
                     {/*user searchbar*/}
                     {!userProfileLoading ?
                         <>
                         <form onSubmit={handleUserSearch}
-                            className={`w-[40%] sm:w-[50%] max-sm:w-[50%] h-fit flex flex-row rounded-2xl my-auto inset-shadow-[0px_3px_0px_0px] inset-shadow-gray-400 
+                            className={`w-[50%] md:w-[40%] h-fit flex flex-row rounded-2xl my-auto inset-shadow-[0px_3px_0px_0px] inset-shadow-gray-400 
                                 ${(userProfileData && queriedUserData?.user_name === userProfileData!.user_name) ? "mx-auto" : "ml-auto"}`}
                             >
                             <input placeholder="Search for a user" 

@@ -1,9 +1,12 @@
 import '../assets/Fonts.css';
 import '../assets/Animations.css';
 import CreatePostIcon from '../../src/assets/CreatePost.svg?react';
-import AnonIcon from '../assets/Anonymous.svg?react'
+import NewPostsIcon from '../assets/NewPosts.svg?react';
+import HomeIcon from '../assets/Home.svg?react';
+import TrendingIcon from '../assets/Trending.svg?react';
+import CommunitiesIcon from '../assets/Find-Community.svg?react';
+import AnonIcon from '../assets/Anonymous.svg?react';
 import { useAuthContext } from '../context/AuthProvider';
-import LinkButton from './LinkButton';
 import { Link, useLocation, useNavigate, useParams } from 'react-router';
 import { getCommunityDataFromName } from '../pages/Community';
 import { useQuery } from '@tanstack/react-query';
@@ -31,11 +34,11 @@ const RightNavbar = ({setShowAddPost}: {setShowAddPost: React.Dispatch<React.Set
                 {!session ?
                     <Link
                         to="/Login"
-                            className="flex flex-row w-fit items-center"
-                        >
-                            <AnonIcon className="w-[30px] h-[30px] border-1 rounded-full border-sky-300 mr-[10px]"/>
-                            <span className='fira-sans-regular text-[18px]'>Anonymous</span>
-                        </Link> 
+                        className="flex flex-row w-fit items-center"
+                    >
+                        <AnonIcon className="w-[30px] h-[30px] border-1 rounded-full border-sky-300 mr-[10px]"/>
+                        <span className='fira-sans-regular text-[18px]'>Anonymous</span>
+                    </Link> 
                     :
                     queriedUserData ? 
                         <Link
@@ -58,18 +61,46 @@ const RightNavbar = ({setShowAddPost}: {setShowAddPost: React.Dispatch<React.Set
                 }
             </div>
             <div className='w-[80%] min-w-[225px] max-w-[250px] h-fit pl-[25px] mr-auto mt-[20px] md:block lg:hidden'>
-                <LinkButton img="NewPosts" text="New Posts" link='/New'/>
+                <Link
+                    to="/New"
+                    className="w-[200px] flex flex-row items-center h-fit rounded-md hover:bg-blue-200 transition duration-300 
+                            pl-[10px] pr-auto py-[5px] mr-[20px] mt-[10px]"
+                >
+                    <NewPostsIcon className="w-fit h-[30px] mr-[10px]"/>
+                    <h1 className='fira-sans-regular text-lg'>New Posts</h1>
+                </Link>  
             </div> 
             { session && 
                 <div className='w-[80%] min-w-[225px] max-w-[250px] h-fit pl-[25px] mr-auto mt-[20px] md:block lg:hidden'>
-                    <LinkButton img="Home" text="Home" link='/Home'/>
+                    <Link
+                    to="/New"
+                    className="w-[200px] flex flex-row items-center h-fit rounded-md hover:bg-blue-200 transition duration-300 
+                            pl-[10px] pr-auto py-[5px] mr-[20px] mt-[10px]"
+                >
+                    <HomeIcon className="w-fit h-[30px] mr-[10px]"/>
+                    <h1 className='fira-sans-regular text-lg'>Home</h1>
+                </Link>
                 </div>
             }
             <div className='w-[80%] min-w-[225px] max-w-[250px] h-fit pl-[25px] mr-auto mt-[20px] md:block lg:hidden'>
-                <LinkButton img="Trending" text="Trending" link='Trending'/>
+                <Link
+                    to="/Trending"
+                    className="w-[200px] flex flex-row items-center h-fit rounded-md hover:bg-blue-200 transition duration-300 
+                            pl-[10px] pr-auto py-[5px] mr-[20px]"
+                >
+                    <TrendingIcon className="w-fit h-[30px] mr-[10px]"/>
+                    <h1 className='fira-sans-regular text-lg'>Trending</h1>
+                </Link>  
             </div>  
             <div className='w-[80%] min-w-[225px] max-w-[250px] h-fit pl-[25px] mr-auto mt-[20px] md:block lg:hidden'>
-                <LinkButton img="Find-Community" text="Find community" link='Communities'/>
+                <Link
+                    to="/Communities"
+                    className="w-[200px] flex flex-row items-center h-fit rounded-md hover:bg-blue-200 transition duration-300 
+                            pl-[10px] pr-auto py-[5px] mr-[20px]"
+                >
+                    <CommunitiesIcon className="w-fit h-[30px] mr-[10px]"/>
+                    <h1 className='fira-sans-regular text-lg'>Communities</h1>
+                </Link>  
             </div>
             {/* <div className='w-[80%] h-fit m-auto mb-[20px]'>
                 <NavDrawer drawerItems={chatList}>

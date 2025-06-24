@@ -3,6 +3,7 @@ import { supabase } from "../supabase-client";
 import type { PostData } from "./interfaces/Interface";
 import Post from "./Post";
 import { useAuthContext } from "../context/AuthProvider";
+import { useNavigate } from "react-router";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const fetchPosts = async(userId: string) : Promise<PostData[]> => {
@@ -15,7 +16,8 @@ export const fetchPosts = async(userId: string) : Promise<PostData[]> => {
 }
 
 const HomeWall = () => {
-    const { session } = useAuthContext()
+    const { session } = useAuthContext();
+    const toLogin = useNavigate();
     const { data, error, isLoading} = useQuery<PostData[]>({
         queryKey: ["posts"],
         queryFn: () => fetchPosts(session!.user.id)
@@ -27,6 +29,10 @@ const HomeWall = () => {
                 <h1 className="text-center mt-10 fira-sans-bold">An error occured while getting the posts</h1>
             </div>
         </div>
+    )
+
+    if(!session) (
+        toLogin("/Login", {replace: true})
     )
     // console.log(data);
     

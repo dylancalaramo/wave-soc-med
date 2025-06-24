@@ -1,10 +1,13 @@
 import { type SetStateAction } from 'react';
 import WaveLogoBtn from './WaveLogoBtn';
-import LinkButton from './LinkButton';
 import { useAuthContext } from '../context/AuthProvider';
 import { Link, useNavigate } from 'react-router';
 import CreatePostIcon from '../assets/CreatePost.svg?react';
-import AnonIcon from '../assets/Anonymous.svg?react'
+import NewPostsIcon from '../assets/NewPosts.svg?react';
+import HomeIcon from '../assets/Home.svg?react';
+import TrendingIcon from '../assets/Trending.svg?react';
+import CommunitiesIcon from '../assets/Find-Community.svg?react';
+import AnonIcon from '../assets/Anonymous.svg?react';
 
 const MobileNavbar = ({setShowAddPost} : {setShowAddPost: React.Dispatch<SetStateAction<boolean>>}) => {
     const { session, queriedUserData } = useAuthContext();
@@ -15,17 +18,28 @@ const MobileNavbar = ({setShowAddPost} : {setShowAddPost: React.Dispatch<SetStat
                 <div className='w-fit h-[50px] fixed left-[10px] flex justify-center'>
                     <WaveLogoBtn />
                 </div>
-                <div className='w-[50px] h-[50px] rounded-full mt-auto mb-auto flex justify-center align-center mr-[10px] hover:bg-sky-200 transition duration-300'>
-                    <LinkButton img="NewPosts" link='/New' centered={true} noHover={true}/>
-                </div>
+                <Link className='w-[50px] h-[50px] rounded-full mt-auto mb-auto flex justify-center items-center align-center mr-[10px] hover:bg-sky-200 transition duration-300'
+                    to="/New"
+                    >
+                    <NewPostsIcon className='w-fit h-[30px] select-none pointer-events-none'/>
+                </Link> 
+                <Link className='w-[50px] h-[50px] rounded-full mt-auto mb-auto flex justify-center items-center align-center mr-[10px] hover:bg-sky-200 transition duration-300'
+                    to="/Trending"
+                    >
+                    <TrendingIcon className='w-fit h-[30px] select-none pointer-events-none'/>
+                </Link> 
                 { session && 
-                    <div className='w-[50px] h-[50px] rounded-full mt-auto mb-auto flex justify-center align-center mr-[10px] hover:bg-sky-200 transition duration-300'>
-                        <LinkButton img="Home" link='/Home' centered={true} noHover={true}/>
-                    </div>
+                    <Link className='w-[50px] h-[50px] rounded-full mt-auto mb-auto flex justify-center items-center align-center mr-[10px] hover:bg-sky-200 transition duration-300'
+                        to="/Home"
+                        >
+                        <HomeIcon className='w-fit h-[30px] select-none pointer-events-none'/>
+                    </Link> 
                 }
-                <div className='w-[50px] h-[50px] rounded-full mt-auto mb-auto flex justify-center align-center mr-[10px] hover:bg-sky-200 transition duration-300'>
-                    <LinkButton link={"Communities"} img={"Find-Community"} centered={true} noHover={true}/>
-                </div>
+                <Link className='w-[50px] h-[50px] rounded-full mt-auto mb-auto flex justify-center items-center align-center mr-[10px] hover:bg-sky-200 transition duration-300'
+                    to="/Communities"
+                    >
+                    <CommunitiesIcon className='w-fit h-[30px] select-none pointer-events-none'/>
+                </Link> 
                 {location.pathname !== "/Communities" ? 
                     <div className='w-[50px] h-[50px] rounded-full mt-auto mb-auto flex justify-center items-center align-center mr-[10px] hover:bg-sky-200 transition duration-300'
                         onClick={() => session ? setShowAddPost(true) : toLogin('Login')}
@@ -35,13 +49,13 @@ const MobileNavbar = ({setShowAddPost} : {setShowAddPost: React.Dispatch<SetStat
                         />
                     </div> : null
                 }
-                <div className={`w-[40px] h-[40px] fixed right-[15px] top-[5px] flex justify-center items-center fira-sans-regular`}>
+                <div className={`w-[40px] h-[40px] fixed right-[15px] top-0 flex justify-center items-center fira-sans-regular`}>
                     {!session ?
-                    <LinkButton link='Profile/' 
-                        img="Anonymous"
-                        noHover={true}
-                        picIsRounded={true}        
-                    /> 
+                    <Link className='w-[50px] h-[50px] rounded-full mt-auto mb-auto flex justify-center items-center align-center mr-[10px]'
+                        to="/Login"
+                        >
+                        <AnonIcon className='w-fit h-[30px] select-none pointer-events-none rounded-full border-1 border-[#3F7CAC]'/>
+                    </Link> 
                     :
                     queriedUserData ? 
                         <Link

@@ -122,9 +122,9 @@ const Community = () => {
                             className="w-fit h-[80px] rounded-full mr-[20px] aspect-square 
                                     absolute top-[-40px] left-[20px] bg-white"
                             />
-                            <div className="w-full h-fit flex flex-row justify-between pr-[20px] mt-[10px]">
+                            <div className="w-full h-fit flex flex-row items-center justify-between pr-[20px] mt-[10px]">
                                 <h1 className="text-[19px] w-full fira-sans-bold whitespace-pre-wrap self-end ml-[120px] lg:ml-[120px]">{communityData?.name}</h1>
-                                <button className={`w-fit h-fit whitespace-nowrap cursor-pointer rounded-full px-3 ${isJoined ? "bg-blue-500" : "bg-gray-300"} ${isJoinedLoading ? "hidden" : "block"}`}
+                                <button className={`w-fit h-fit whitespace-nowrap cursor-pointer rounded-full px-3 ${isJoined ? "bg-blue-500 text-white" : "bg-gray-300"} ${isJoinedLoading ? "hidden" : "block"}`}
                                         disabled={(isJoinedLoading || isPending) ? true : false }
                                         onClick={() => {
                                             if(!session) {

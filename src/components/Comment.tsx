@@ -92,7 +92,7 @@ const Comment = ({commentData} : {commentData: CommentTreeType}) => {
                     <div className="loading-bg-anim w-[100px] h-[35px] rounded-lg"/>
                     :
                     <Link
-                        to={`/Profile/${parentCommentUserData? parentCommentUserData.user_name: ""}`}
+                        to={`Profile/${parentCommentUserData? parentCommentUserData.user_name: ""}`}
                         className="flex flex-row w-fit items-center mr-[20px]"
                     >
                         {parentCommentUserData?.profile_picture_url ?
